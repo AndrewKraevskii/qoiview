@@ -322,6 +322,12 @@ static void event(const sapp_event* ev) {
                 default: break;
             }
             break;
+        case SAPP_EVENTTYPE_KEY_DOWN:
+            switch (ev->key_code) {
+                case SAPP_KEYCODE_ESCAPE: sapp_request_quit(); break;
+                default: break;
+            }
+            break;
         case SAPP_EVENTTYPE_MOUSE_MOVE:
             if (ev->modifiers & SAPP_MODIFIER_LMB) {
                 move(ev->mouse_dx, ev->mouse_dy);
